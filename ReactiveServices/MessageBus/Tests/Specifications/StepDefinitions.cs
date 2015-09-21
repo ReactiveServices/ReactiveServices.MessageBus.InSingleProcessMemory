@@ -3,11 +3,10 @@ using PostSharp.Patterns.Diagnostics;
 using System;
 using System.Diagnostics;
 using System.Linq;
-using System.Threading;
 using ReactiveServices.Extensions;
 using TechTalk.SpecFlow;
 
-namespace ReactiveServices.MessageBus.Tests.Specifications
+namespace ReactiveServices.MessageBus.InSingleProcessMemory.Tests.Specifications
 {
     [Binding]
     [Log(AttributeExclude = true)]

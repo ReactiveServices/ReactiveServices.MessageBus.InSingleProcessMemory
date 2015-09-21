@@ -1,4 +1,4 @@
-﻿namespace ReactiveServices.MessageBus.Tests
+﻿namespace ReactiveServices.MessageBus.InSingleProcessMemory.Tests
 {
     class MyId : Id<MyId>
     {

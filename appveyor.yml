@@ -1,18 +1,14 @@
-version: 0.2.{build}
+version: 0.3.{build}
 configuration: Release
 platform: Any CPU
 cache: ReactiveServices/packages
 before_build:
-- nuget restore ReactiveServices/ReactiveServices.MessageBus.sln
+- nuget restore ReactiveServices/ReactiveServices.MessageBus.InSingleProcessMemory.sln
+after_build:
+- nuget pack ReactiveServices/MessageBus/ReactiveServices.MessageBus.InSingleProcessMemory.csproj -IncludeReferencedProjects -Properties Configuration=Release -Properties Platform=AnyCPU
 build:
-  project: ReactiveServices/ReactiveServices.MessageBus.sln
+  project: ReactiveServices/ReactiveServices.MessageBus.InSingleProcessMemory.sln
   verbosity: minimal
-environment:
-  RABBITMQ_HOSTNAME: owl.rmq.cloudamqp.com
-  RABBITMQ_VHOST: xrxasxgn
-  RABBITMQ_USERNAME: xrxasxgn
-  RABBITMQ_PASSWORD:
-    secure: KMaEnJAiM2nL++oL0Ys/z0hNC8Nz+wiIlzx98JhCFISYKWf119WpLlt3FyYgsYNi
 test:
   categories:
     except:
@@ -22,5 +18,14 @@ test:
       - load
 assembly_info:
   patch: true
-  file: ReactiveServices\MessageBus\Properties\AssemblyInfo.cs
+  file: ReactiveServices\MessageBus\InSingleProcessMemory\Properties\AssemblyInfo.cs
+  assembly_file_version: '{version}'
+  assembly_version: '{version}'
   assembly_informational_version: '{version}'
+artifacts:
+  - path: ReactiveServices.MessageBus.InSingleProcessMemory.*.nupkg
+deploy:
+- provider: NuGet
+  api_key:
+    secure: f16K1osClAxbT+GmqxPPFj//CRk7rOFm4XtRVJkGTqnvfQwR30LPgTidxUSzRLyd
+  skip_symbols: true

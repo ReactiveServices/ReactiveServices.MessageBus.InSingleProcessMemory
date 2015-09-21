@@ -8,9 +8,9 @@ using System.Diagnostics;
 using System.IO;
 using ReactiveServices.Authorization;
 using ReactiveServices.Extensions;
-using ReactiveServices.MessageBus.Tests.UnitTests;
+using ReactiveServices.MessageBus.InSingleProcessMemory.Tests.UnitTests;
 
-namespace ReactiveServices.MessageBus.Tests.Specifications
+namespace ReactiveServices.MessageBus.InSingleProcessMemory.Tests.Specifications
 {
     public sealed class StepDefinitionsExecutor : IDisposable
     {
