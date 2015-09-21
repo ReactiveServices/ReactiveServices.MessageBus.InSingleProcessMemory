@@ -10,12 +10,6 @@ See [this link](http://reactiveservices.github.io) for an overview about the fra
 
 ReactiveServices.MessageBus.InSingleProcessMemory is a "in memory" implementation of the Reac.MessageBus abstraction.
 
-### Dependencies
-
-This package depends on the following packages:
-
-- **ReactiveServices.MessageBus**: Abstraction for all message bus client implementations for ReactiveServices.
-
 ## License
 
 MIT License
