@@ -5,7 +5,7 @@ cache: ReactiveServices/packages
 before_build:
 - nuget restore ReactiveServices/ReactiveServices.MessageBus.InSingleProcessMemory.sln
 after_build:
-- nuget pack ReactiveServices/MessageBus/InSingleProcessMemory/ReactiveServices.MessageBus.InSingleProcessMemory.csproj -IncludeReferencedProjects -Properties Configuration=Release -Properties Platform=AnyCPU
+- nuget pack ReactiveServices/MessageBus/InSingleProcessMemory/ReactiveServices.MessageBus.InSingleProcessMemory.csproj -Symbols -IncludeReferencedProjects -Properties Configuration=Release -Properties Platform=AnyCPU
 build:
   project: ReactiveServices/ReactiveServices.MessageBus.InSingleProcessMemory.sln
   verbosity: minimal
